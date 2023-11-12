@@ -22,5 +22,6 @@ pipeline {
           sh "${SERVER_CRENDENTIALS}"
         }
       }
+    }
   }
 }
