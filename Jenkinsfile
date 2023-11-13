@@ -10,27 +10,20 @@ pipeline {
     SERVER_CRENDENTIALS = credentials("server-credentials")
   }
   stages {
-    stage("build") {
-      steps {
-        echo "building the application..."
-        echo "building version ${NEW_VERSION}"
-      }
-      stage("test") {
-        when {
-          expression {
-            params.execteTests == true
-          }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-        steps {
-          echo "testing the application..."
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-      }
-      stage("deploy") {
-        steps {
-          echo "deploying the applications..."
-          echo "deploying version ${params.VERSION}"
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
-      }
     }
-  }
 }
