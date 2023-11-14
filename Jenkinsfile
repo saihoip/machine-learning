@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 nodejs('Node-10.17') {
+                    sh 'node --version'
                     sh 'yarn install'
                 }
             }
