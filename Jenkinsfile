@@ -13,6 +13,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                nodejs('Node-10.17') {
+                    sh 'yarn install'
+                }
             }
         }
         stage('Test') {
